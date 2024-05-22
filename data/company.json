@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "name": "Trimegah Asset Management",
+        "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlS3D6wBlWmr2vQNH_mGBPwe6ffhNLfBy_KLAZFpdKIg&s",
+        "location": "Jakarta, Indonesia",
+        "email": "info@trimegah.com",
+        "description": "Trimegah Asset Management merupakan salah satu perusahaan manajer investasi terkemuka di Indonesia."
+    },
+    {
+        "id": 2,
+        "name": "Majoris Capital",
+        "companyLogo": "https://media.bareksa.com/cms/media/assets/image/2020/01/15607_d17407f5f35fa02b9a5ec351389c6e81.png",
+        "location": "Jakarta, Indonesia",
+        "email": "info@majoris.com",
+        "description": "Majoris Capital adalah perusahaan manajer investasi yang fokus pada produk pasar uang syariah di Indonesia."
+    },
+    {
+        "id": 3,
+        "name": "Schroder Investment Management Indonesia",
+        "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ8QTLGhomVQlAXQbi7F-_tcm98R0ggm0CkGXwlUQEOg&s",
+        "location": "Jakarta, Indonesia",
+        "email": "info@schroder.com",
+        "description": "Schroder Investment Management Indonesia adalah perusahaan manajer investasi global yang menyediakan berbagai produk investasi, termasuk reksadana saham."
+    },
+    {
+        "id": 4,
+        "name": "Manulife Asset Management",
+        "companyLogo": "https://bisnispro.id/wp-content/uploads/2017/11/manulife.png",
+        "location": "Jakarta, Indonesia",
+        "email": "info@manulife.com",
+        "description": "Manulife Asset Management adalah perusahaan manajer investasi yang menawarkan berbagai produk investasi, termasuk reksadana obligasi."
+    },
+    {
+        "id": 5,
+        "name": "Mandiri Investment Management",
+        "companyLogo": "https://media.licdn.com/dms/image/C560BAQGuH0hApjyVYg/company-logo_200_200/0/1631377770031?e=2147483647&v=beta&t=kY2JrOQLqx33F3uX8LaFgTn-CtHBVxEWAhgs6TLEFho",
+        "location": "Jakarta, Indonesia",
+        "email": "info@mandiri.com",
+        "description": "Mandiri Investment Management adalah perusahaan manajer investasi yang berfokus pada pengelolaan dana investasi dan portofolio."
+    },
+    {
+        "id": 6,
+        "name": "AXA Mandiri Investa",
+        "companyLogo": "https://media.licdn.com/dms/image/C4D0BAQEwKoFgSCyrTw/company-logo_200_200/0/1657164981313?e=2147483647&v=beta&t=K1BjPBq-jEtqSM1xY0T8CSNha5-2r_S1m2Zkws_cyV4",
+        "location": "Jakarta, Indonesia",
+        "email": "info@axamandiri.com",
+        "description": "AXA Mandiri Investa adalah perusahaan manajer investasi yang menyediakan berbagai produk investasi yang sesuai dengan kebutuhan investor."
+    },
+    {
+        "id": 7,
+        "name": "BNI Asset Management",
+        "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0HINKy9zEaU5__Sr-vdc2QNdgwkjE2phfSp8saPsZZA&s",
+        "location": "Jakarta, Indonesia",
+        "email": "info@bniasset.com",
+        "description": "BNI Asset Management adalah perusahaan manajer investasi yang menawarkan berbagai produk investasi, termasuk reksadana pasar uang."
+    },
+    {
+        "id": 8,
+        "name": "BNP Paribas Asset Management",
+        "companyLogo": "https://img.alinea.id/img/content/2020/12/15/94289/aum-reksa-dana-syariah-bnp-paribas-greater-china-tembus-us-100-juta-rDPnlC7rro.jpg",
+        "location": "Jakarta, Indonesia",
+        "email": "info@bnpparibas.com",
+        "description": "BNP Paribas Asset Management adalah perusahaan manajer investasi yang menyediakan berbagai produk investasi, termasuk reksadana indeks saham."
+    },
+    {
+        "id": 9,
+        "name": "Danareksa Investment Management",
+        "companyLogo": "https://skandinavia.co.id/wp-content/uploads/2022/09/Visi-dan-Misi-PT-Danareksa-Persero-Serta-Produk-Dana-Reksa.jpg",
+        "location": "Jakarta, Indonesia",
+        "email": "info@danareksa.com",
+        "description": "Danareksa Investment Management adalah perusahaan manajer investasi terkemuka di Indonesia yang menyediakan berbagai produk investasi."
+    },
+    {
+        "id": 10,
+        "name": "MNC Asset Management",
+        "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPCy1Bczl73APOazy7EIRS4X4uyks6udeMNkbCCT0i7Q&s",
+        "location": "Jakarta, Indonesia",
+        "email": "info@mncasset.com",
+        "description": "MNC Asset Management adalah perusahaan manajer investasi yang berfokus pada pengelolaan dana investasi dan portofolio."
+    },
+    {
+        "id": 11,
+        "name": "Ciptadana Capital",
+        "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk7ZX67KR2v-0ia_7TAC2355dY0Gdlzxxe2-yWS1JuXg&s",
+        "location": "Jakarta, Indonesia",
+        "email": "info@ciptadana.com",
+        "description": "Ciptadana Capital adalah perusahaan manajer investasi yang menyediakan berbagai produk investasi, termasuk reksadana properti."
+    },
+    {
+        "id": 12,
+        "name": "BCA Asset Management",
+        "companyLogo": "https://kemahasiswaan.amikompurwokerto.ac.id/wp-content/uploads/2023/03/PT-Bank-Central-Asia-Tbk-BCA-1.jpg",
+        "location": "Jakarta, Indonesia",
+        "email": "info@bcaasset.com",
+        "description": "BCA Asset Management adalah perusahaan manajer investasi yang menawarkan berbagai produk investasi, termasuk reksadana syariah."
+    },
+    {
+        "id": 13,
+        "name": "Maybank Asset Management",
+        "companyLogo": "https://media.bareksa.com/cms/media/assets/image/2015/08/10431_bd71116f21e6ee34caf8eb970b57d868.png",
+        "location": "Jakarta, Indonesia",
+        "email": "info@maybank.com",
+        "description": "Maybank Asset Management adalah perusahaan manajer investasi yang berkomitmen untuk memberikan solusi investasi yang terbaik bagi para investor."
+    },
+    {
+        "id": 14,
+        "name": "Panin Asset Management",
+        "companyLogo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYi6oHlGhEnoGPGuU8XM6Wqm2PgB09wlhDKmHvyb15Aw&s",
+        "location": "Jakarta, Indonesia",
+        "email": "info@paninasset.com",
+        "description": "Panin Asset Management adalah perusahaan manajer investasi yang menyediakan berbagai produk investasi yang sesuai dengan kebutuhan investor."
+    },
+    {
+        "id": 15,
+        "name": "Simas Investment Management",
+        "companyLogo": "https://play-lh.googleusercontent.com/Zs8PhMXlp-oV8U--UT8ETH2Prk3hp1k2RggW3FjDDXoeOqldzCley0Oaq7fFURXwUJkp",
+        "location": "Jakarta, Indonesia",
+        "email": "info@simas.com",
+        "description": "Simas Investment Management adalah perusahaan manajer investasi yang berkomitmen untuk memberikan solusi investasi yang terbaik bagi para investor."
+    }
+]

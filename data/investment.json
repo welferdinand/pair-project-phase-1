@@ -1,0 +1,137 @@
+[
+    {
+        "id": 1,
+        "name": "Trimegah Saham Syariah",
+        "description": "Reksa Dana Trimegah Saham Syariah adalah produk investasi yang memberikan akses kepada investor untuk berinvestasi di saham-saham syariah unggulan di Indonesia.",
+        "CompanyId": 1,
+        "investmentType": "highrisk",
+        "amount": "9300000",
+        "CategoryId": 1
+    },
+    {
+        "id": 2,
+        "name": "Majoris Pasar Uang Syariah Indonesia",
+        "description": "Reksa Dana Majoris Pasar Uang Syariah Indonesia adalah produk investasi yang memberikan kesempatan bagi investor untuk berinvestasi di pasar uang syariah.",
+        "CompanyId": 2,
+        "investmentType": "lowrisk",
+        "amount": "7000000",
+        "CategoryId": 2
+    },
+    {
+        "id": 3,
+        "name": "Schroder Saham Indonesia",
+        "description": "Reksa Dana Schroder Saham Indonesia adalah produk investasi yang memberikan eksposur terhadap saham-saham unggulan di pasar modal Indonesia.",
+        "CompanyId": 3,
+        "investmentType": "highrisk",
+        "amount": "10000000",
+        "CategoryId": 1
+    },
+    {
+        "id": 4,
+        "name": "Manulife Obligasi Plus",
+        "description": "Reksa Dana Manulife Obligasi Plus adalah produk investasi yang memberikan pilihan investasi dalam instrumen obligasi dengan risiko yang terukur.",
+        "CompanyId": 4,
+        "investmentType": "lowrisk",
+        "amount": "6000000",
+        "CategoryId": 3
+    },
+    {
+        "id": 5,
+        "name": "Mandiri Investa Berimbang",
+        "description": "Reksa Dana Mandiri Investa Berimbang adalah produk investasi yang mencakup berbagai kelas aset, termasuk saham, obligasi, dan pasar uang.",
+        "CompanyId": 5,
+        "investmentType": "lowrisk",
+        "amount": "5500000",
+        "CategoryId": 1
+    },
+    {
+        "id": 6,
+        "name": "AXA Mandiri Proteksi Plus",
+        "description": "Reksa Dana AXA Mandiri Proteksi Plus adalah produk investasi yang memberikan perlindungan dari fluktuasi pasar dengan strategi investasi yang disesuaikan.",
+        "CompanyId": 6,
+        "investmentType": "lowrisk",
+        "amount": "7500000",
+        "CategoryId": 3
+    },
+    {
+        "id": 7,
+        "name": "BNI Pasar Uang",
+        "description": "Reksa Dana BNI Pasar Uang adalah produk investasi yang menawarkan potensi pengembalian yang stabil dengan investasi dalam instrumen pasar uang.",
+        "CompanyId": 7,
+        "investmentType": "lowrisk",
+        "amount": "4800000",
+        "CategoryId": 2
+    },
+    {
+        "id": 8,
+        "name": "BNP Paribas Indeks Saham",
+        "description": "Reksa Dana BNP Paribas Indeks Saham adalah produk investasi yang mencerminkan kinerja indeks saham tertentu dengan diversifikasi portofolio yang baik.",
+        "CompanyId": 8,
+        "investmentType": "highrisk",
+        "amount": "8500000",
+        "CategoryId": 1
+    },
+    {
+        "id": 9,
+        "name": "Danareksa Investasi Saham",
+        "description": "Reksa Dana Danareksa Investasi Saham adalah produk investasi yang memberikan akses kepada investor untuk berinvestasi di saham-saham unggulan di Indonesia.",
+        "CompanyId": 9,
+        "investmentType": "highrisk",
+        "amount": "9000000",
+        "CategoryId": 1
+    },
+    {
+        "id": 10,
+        "name": "MNC Dana Saham",
+        "description": "Reksa Dana MNC Dana Saham adalah produk investasi yang memberikan kesempatan kepada investor untuk berpartisipasi dalam pertumbuhan perusahaan-perusahaan di pasar modal Indonesia.",
+        "CompanyId": 10,
+        "investmentType": "highrisk",
+        "amount": "8000000",
+        "CategoryId": 1
+    },
+    {
+        "id": 11,
+        "name": "Ciptadana Properti Ritel",
+        "description": "Reksa Dana Ciptadana Properti Ritel adalah produk investasi yang memberikan kesempatan kepada investor untuk berpartisipasi dalam pertumbuhan sektor properti ritel di Indonesia.",
+        "CompanyId": 11,
+        "investmentType": "highrisk",
+        "amount": "9500000",
+        "CategoryId": 4
+    },
+    {
+        "id": 12,
+        "name": "BCA Syariah Berkembang",
+        "description": "Reksa Dana BCA Syariah Berkembang adalah produk investasi yang mengutamakan prinsip-prinsip syariah dalam melakukan investasi di berbagai instrumen keuangan.",
+        "CompanyId": 12,
+        "investmentType": "lowrisk",
+        "amount": "5200000",
+        "CategoryId": 1
+    },
+    {
+        "id": 13,
+        "name": "Maybank Dana Unggulan",
+        "description": "Reksa Dana Maybank Dana Unggulan adalah produk investasi yang memberikan kesempatan kepada investor untuk berpartisipasi dalam pertumbuhan perusahaan-perusahaan unggulan di Indonesia.",
+        "CompanyId": 13,
+        "investmentType": "highrisk",
+        "amount": "9700000",
+        "CategoryId": 1
+    },
+    {
+        "id": 14,
+        "name": "Panin Saham",
+        "description": "Reksa Dana Panin Saham adalah produk investasi yang memberikan kesempatan kepada investor untuk berpartisipasi dalam pertumbuhan perusahaan-perusahaan unggulan di pasar modal Indonesia.",
+        "CompanyId": 14,
+        "investmentType": "highrisk",
+        "amount": "8900000",
+        "CategoryId": 1
+    },
+    {
+        "id": 15,
+        "name": "Simas Pendapatan Tetap",
+        "description": "Reksa Dana Simas Pendapatan Tetap adalah produk investasi yang memberikan pilihan investasi dalam instrumen pendapatan tetap dengan risiko yang terukur.",
+        "CompanyId": 15,
+        "investmentType": "lowrisk",
+        "amount": "6300000",
+        "CategoryId": 3
+    }
+]
