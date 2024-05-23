@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Reksadana Syariah",
+        "imageurl": "https://i.ibb.co.com/h14Y7Tw/islamic-1-svgrepo-com.png"
+    },
+    {
+        "id": 2,
+        "name": "Reksadana Saham",
+        "imageurl": "https://i.ibb.co.com/s9dKFtB/stock-svgrepo-com.png"
+    },
+    {
+        "id": 3,
+        "name": "Reksadana Pendapatan Tetap",
+        "imageurl": "https://i.ibb.co.com/4TBKP0d/papers-svgrepo-com.png"
+    },
+    {
+        "id": 4,
+        "name": "Reksadana Pasar Uang",
+        "imageurl": "https://i.ibb.co.com/XzhkRwh/coin-vector-svgrepo-com.png"
+    }
+]
