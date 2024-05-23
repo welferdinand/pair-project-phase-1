@@ -19,8 +19,7 @@ router.post('/login', Controller.postFormLogin)
 
 router.get('/logout', Controller.logoutSession)
 
-router.use(function (req, res, next) {
-    console.log(req.session);
+let loginCheck = function (req, res, next) {
     
     if(!req.session.username){
         const error = 'You did not login yet! :D'
@@ -28,19 +27,38 @@ router.use(function (req, res, next) {
     }else {
         next()
     }
-})
+}
 
-router.get('/home', Controller.showHomepage)
+let roleCheck = function (req, res, next) {
+    
+    if(req.session.role !== "admin"){
+        const error = 'You did not have the access to this button! >:('
+        res.redirect(`/login?error=${error}`)
+    }else {
+        next()
+    }
+}
 
-router.get('/investments', Controller.showInvestments)
+router.get('/home', loginCheck, Controller.showHomepage)
 
-router.get('/companies', Controller.showCompanies)
+router.get('/companies', loginCheck, Controller.showCompanies)
 
+router.get('/companies/add', loginCheck, roleCheck, Controller.formAddCompany)
+router.post('/companies/add', loginCheck, roleCheck, Controller.postAddCompany)
 
-router.get('/users', Controller.showUsers)
+router.get('/companies/:id/edit', loginCheck, roleCheck, Controller.formEditCompany)
+router.post('/companies/:id/edit', loginCheck, roleCheck, Controller.postEditCompany)
 
-router.get('/categories/:id', Controller.showCategories)
-router.get('/users/:id', Controller.showUserInvestments)
+router.get('/companies/:id/delete', loginCheck, roleCheck, Controller.deleteCompany)
+
+router.get('/portofolios', loginCheck, Controller.showUsers)
+
+router.get('/categories/:id', loginCheck, Controller.showCategories)
+
+router.get('/categories/:id/add', loginCheck, roleCheck, Controller.formAddInvestment)
+router.post('/categories/:id/add', loginCheck, roleCheck, Controller.postAddInvestment)
+
+// router.get('/users/:id', loginCheck, Controller.showUserInvestments)
 
 
 module.exports = router

@@ -1,6 +1,6 @@
-const { User, Category } = require("../models/index");
+const { User, Category, Investment, Company } = require("../models/index");
 const bcryptjs = require("bcryptjs");
-const {sendEmail} = require('../helpers/index') 
+const {sendEmail, format_rupiah} = require('../helpers/index') 
 
 class Controller {
 
@@ -14,7 +14,8 @@ class Controller {
 
   static async showFormRegister(req, res) {
     try {
-      res.render("formRegister");
+      let {error} = req.query
+      res.render("formRegister", {error});
     } catch (error) {
       res.send(error);
     }
@@ -27,8 +28,12 @@ class Controller {
       await sendEmail(email);
       res.redirect("/login");
     } catch (error) {
-      console.log(error);
-      res.send(error);
+      if(error.name === "SequelizeValidationError"){
+        let errors = error.errors.map(el => el.message)
+        res.redirect(`/register?error=${errors}`)
+      }else {
+        res.send(error);
+      }
     }
   }
 
@@ -75,8 +80,9 @@ class Controller {
 
   static async showHomepage(req, res) {
     try {
+      let {username, balance} = req.session
       let category = await Category.findAll()
-      res.render('home', {category})
+      res.render('home', {category, username, balance, format_rupiah})
     } catch (error) {
       res.send(error);
     }
@@ -91,25 +97,12 @@ class Controller {
     }
   }
 
-  static async showInvestments(req, res) {
-    try {
-      res.send("b");
-    } catch (error) {
-      res.send(error);
-    }
-  }
-
   static async showCompanies(req, res) {
     try {
-      res.send("c");
-    } catch (error) {
-      res.send(error);
-    }
-  }
-
-  static async showCompanies(req, res) {
-    try {
-      res.send("c");
+      let {search} = req.query
+      let data = await Company.getCompanyByName(search)
+      let {username, balance} = req.session
+      res.render('companyList', {username, balance, format_rupiah, data})
     } catch (error) {
       res.send(error);
     }
@@ -117,7 +110,20 @@ class Controller {
 
   static async showCategories(req, res) {
     try {
-      res.send("d");
+      let {id} = req.params
+      let {search} = req.query
+      let {username, balance} = req.session
+      let category = await Category.findByPk(id)
+    
+      // let investment = await Investment.findAll({
+      //   include : Company,
+      //   where : {
+      //     CategoryId : id
+      //   }
+      // })
+
+      let investment = await Investment.getInvestmentByName(id, search)
+      res.render('detailCategory', {investment, category, username, balance, format_rupiah});
     } catch (error) {
       res.send(error);
     }
@@ -125,19 +131,122 @@ class Controller {
 
   static async showUsers(req, res) {
     try {
-      res.send("e");
+      let {username, balance} = req.session
+      res.render('userPortfolio', {username,balance, format_rupiah})
     } catch (error) {
       res.send(error);
     }
   }
 
-  static async showUserInvestments(req, res) {
+  static async formAddCompany(req, res) {
     try {
-      res.send("f");
+      let {error} = req.query
+      res.render('formAddCompany', {error})
     } catch (error) {
       res.send(error);
     }
   }
+
+  static async postAddCompany(req, res) {
+    try {
+      let {name, location, email, companyLogo, description} = req.body
+
+      await Company.create({name, location, email, companyLogo, description})
+
+      res.redirect('/companies')
+    } catch (error) {
+      if(error.name = "SequelizeValidationError") {
+        let errors = error.errors.map(el => el.message)
+        res.redirect(`/companies/add?error=${errors}`)
+      } else {
+        res.send(error);
+      }
+    }
+  }
+
+  static async formEditCompany(req, res) {
+    try {
+      let {error} = req.query
+      let {id} = req.params
+
+      let data = await Company.findByPk(id)
+      res.render('formEditCompany', {error, data});
+    } catch (error) {
+      res.send(error);
+    }
+  }
+
+  static async postEditCompany(req, res) {
+    try {
+      let {id} = req.params
+      let {name, location, email, companyLogo, description} = req.body
+
+      await Company.update({name, location, email, companyLogo, description}, {where : {id}})
+
+      res.redirect('/companies')
+    } catch (error) {
+      let {id} = req.params
+
+      if(error.name = "SequelizeValidationError") {
+        let errors = error.errors.map(el => el.message)
+        res.redirect(`/companies/${id}/edit?error=${errors}`)
+      } else {
+        res.send(error);
+      }
+    }
+  }
+  
+  static async deleteCompany(req,res) {
+    try {
+      let {id} = req.params
+      await Company.destroy({
+        where : {id}
+      })
+      res.redirect('/companies')
+    } catch (error) {
+      res.send(error)
+    }
+  }
+
+  static async formAddInvestment(req, res) {
+    try {
+      let {error} = req.query
+      let {id} = req.params
+      let company = await Company.findAll()
+      res.render('formAddInvestment', {company, id, error});
+    } catch (error) {
+      res.send(error);
+    }
+  }
+
+  static async postAddInvestment(req, res) {
+    try {
+      let {name, CompanyId, investmentType, amount, description} = req.body
+      let {id} = req.params
+
+      await Investment.create({
+        name,
+        description,
+        CompanyId,
+        investmentType,
+        amount, 
+        CategoryId: id
+      })
+
+      res.redirect(`/categories/${id}`)
+    } catch (error) {
+      let {id} = req.params
+
+      if(error.name = "SequelizeValidationError") {
+        let errors = error.errors.map(el => el.message)
+        res.redirect(`/categories/${id}/add?error=${errors}`)
+      } else {
+        res.send(error);
+      }
+    }
+  }
+
+
 }
 
 module.exports = Controller;

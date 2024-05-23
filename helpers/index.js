@@ -28,4 +28,8 @@ async function sendEmail(email){
       });
 }
 
-module.exports = {sendEmail}
+function format_rupiah(balance){
+  return balance.toLocaleString("id-ID", {style: "currency", currency: "IDR"})
+}
+
+module.exports = {sendEmail, format_rupiah}

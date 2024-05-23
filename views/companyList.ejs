@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bobot - Stock Trading for Everyone!</title>
+    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      /* Custom CSS for the paper-like div */
+      .navbar-custom {
+        background-color: #1b1a55;
+      }
+
+      .navbar-custom .navbar-brand,
+      .navbar-custom .nav-link {
+        color: white;
+      }
+
+      .navbar-custom .btn-primary:hover,
+      .navbar-custom .btn-primary:focus {
+        color: white;
+      }
+
+      .paper {
+        background-color: #f8f9fa;
+        border: 1px solid #dcdcdc;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        max-width: 1000px; /* Adjust the max-width as needed */
+        width: 100%;
+      }
+
+      /* Custom CSS for centering */
+      .centered {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; /* Change to flex-start to avoid cutting off the top */
+        min-height: 100vh;
+        padding: 20px; /* Add padding to avoid content being cut off */
+        box-sizing: border-box;
+      }
+
+      /* Custom CSS for section boxes */
+      .section-box {
+        background-color: #ffffff;
+        border: 1px solid #ced4da;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+      }
+
+      /* Custom CSS for product cards */
+      .product-card {
+        background-color: #ffffff;
+        border: 1px solid #ced4da;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+        display: flex;
+        align-items: center;
+      }
+
+      .product-card img {
+        width: 50px;
+        height: auto;
+        margin-right: 20px;
+      }
+
+      /* .product-card .product-details {
+      flex-grow: 1;
+    } */
+
+      .product-card .product-actions {
+        display: flex;
+        gap: 10px;
+      }
+
+      /* Custom CSS for the table container */
+      .table-container {
+        max-height: 400px; /* Adjust the max-height as needed */
+        overflow-y: auto; /* Enable vertical scrolling */
+      }
+    </style>
+  </head>
+  <body style="background-color: #070f2b">
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/home" style="margin-left: 4%">
+          <img
+            src="https://i.ibb.co.com/rFg1MCV/bobot-logo.png"
+            width="85"
+            height="45"
+            alt=""
+          />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto align-items-center ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                style="color: white"
+                >Halo, <%= username %>!</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                style="color: white"
+                >Balance: <%= format_rupiah(balance) %></a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/home"
+                style="color: white"
+                >Investasi</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                style="color: white"
+                >My Portofolio</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/companies"
+                style="color: white"
+                >Company</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="/login" class="btn btn-primary">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="centered">
+      <div class="text-center paper">
+        <h1></h1>
+        <div class="section-box">
+          <h4>COMPANY DETAILS</h4>
+        </div>
+        <div class="section-box">
+          <h4 style="text-align: left">SEARCH COMPANY</h4>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              name="search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+        <div class="section-box">
+          <div class="row my-3">
+            <div class="col">
+              <h4 style="text-align: left">COMPANY NAMES</h4>
+            </div>
+            <div class="col">
+              <span style="width: 100px; margin-left: 59%">
+                <a href="/companies/add" class="btn btn-primary">Add a Company</a>
+              </span>
+            </div>
+          </div>
+          <% data.forEach(el => { %>  
+            <div class="card mb-2">
+              <div class="product-card" style="border: none">
+                <img src="<%= el.companyLogo %>" alt="Logo" />
+                <h5 style="width: 30%"><%= el.name %></h5>
+                <a class="btn btn-secondary" style="margin-left: 60%;margin-right: 1%" href="/companies/<%= el.id %>/edit">
+                  Edit
+                </a>
+                <a class="btn btn-danger" href="/companies/<%= el.id %>/delete">
+                  Delete
+                </a>
+              </div>
+              <div style="padding-left: 2%">
+                <p style="text-align: left">
+                  <%= el.description %>
+                </p>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <p style="font-size: 14px; text-align: left; padding-left: 4%">
+                    <%= el.location %>
+                  </p>
+                </div>
+                <div class="col">
+                  <p style="font-size: 14px; padding-right: 50%"><%= el.email %></p>
+                </div>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
